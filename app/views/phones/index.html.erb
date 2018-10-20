@@ -1,0 +1,17 @@
+<h1>Phones List</h1>
+
+<table>
+    <tr>
+        <th> Name </th>
+        <th> Price </th>
+        <th> Quantity </th>
+    
+    <% @phones.each do |p| %>
+        <tr>
+            <td><%= p.name %></td>
+            <td><%= p.price %></td>
+            <td><%= p.quantity %></td>
+        </tr>
+    <% end %>
+    
+</table>
