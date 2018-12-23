@@ -1,0 +1,2 @@
+class AddBrandToPhone < ApplicationRecord
+end

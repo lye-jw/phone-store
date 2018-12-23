@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_035544) do
+ActiveRecord::Schema.define(version: 2018_10_27_134451) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "phones", force: :cascade do |t|
     t.string "name"
@@ -18,6 +24,8 @@ ActiveRecord::Schema.define(version: 2018_10_20_035544) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "brand_id"
+    t.index ["brand_id"], name: "index_phones_on_brand_id"
   end
 
 end

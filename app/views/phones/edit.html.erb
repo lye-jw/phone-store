@@ -5,9 +5,12 @@
     <%= f.text_field :price %><br>
     <%= f.label :quantity %>
     <%= f.text_field :quantity %><br>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %><br>
     <%= f.label :brand %>
-    <%= f.select :brand_id, options_for_select(Brand.all.map{|s|[s.name, s.id]}) %><br>
+    <%= f.select :brand_id, options_for_select(Brand.all.map{|s|[s.name, s.id]}, params[:brand_id]) %><br>
     <%= f.submit "Submit" %>
     <%= link_to 'Phones', phones_path %> |
     <%= link_to 'Brands', brands_path %>
+
   <% end %>

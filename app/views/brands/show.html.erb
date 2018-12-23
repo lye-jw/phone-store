@@ -1,18 +1,16 @@
-<h1>Phones List</h1>
+<p id="notice"><%= notice %></p>
 
 <table>
     <tr>
         <th> Name </th>
         <th> Price </th>
         <th> Quantity </th>
-        <th> <%= link_to 'Brand', brands_path %> </th>
     
-    <% @phones.each do |p| %>
+    <% @brands.phones.each do |p| %>
         <tr>
             <td><%= p.name %></td>
             <td><%= p.price %></td>
             <td><%= p.quantity %></td>
-            <td><%= p.brand.name unless p.brand.blank? %></td>
             <td><%= link_to 'Details', phone_path(p.id) %></td>
             <td><%= link_to 'Edit', edit_phone_path(p.id) %></td>
             <td><%= link_to 'Remove', phone_path(p.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -21,4 +19,6 @@
     
 </table>
 
-<%= link_to 'Enter New Phone', new_phone_path %>
+<%= link_to 'Enter New Phone', new_phone_path %><br>
+<br>
+<%= link_to 'Back', brands_path %>
