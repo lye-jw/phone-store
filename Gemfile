@@ -6,7 +6,7 @@ ruby '2.5.1'
 gem 'mini_racer'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3' #change to 'pg' for postgres
 # Use Puma as the app server
