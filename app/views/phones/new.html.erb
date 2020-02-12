@@ -1,13 +1,19 @@
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, class: "alert alert-#{key} alert-dismissable") do %>
+   <%= value %>
+  <% end %> 
+<% end %>
+
 <%= form_for @phone do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-    <%= f.label :price %>
-    <%= f.text_field :price %><br>
-    <%= f.label :quantity %>
-    <%= f.text_field :quantity %><br>
-    <%= f.label :brand %>
-    <%= f.select :brand_id, options_for_select(Brand.all.map{|s|[s.name, s.id]}) %><br>
-    <%= f.submit "Submit" %>
-    <%= link_to 'Phones', phones_path %> |
-    <%= link_to 'Brands', brands_path %>
-  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :price %>
+  <%= f.text_field :price %><br>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %><br>
+  <%= f.label :brand %>
+  <%= f.select :brand_id, options_for_select(Brand.all.map{|s|[s.name, s.id]}) %><br>
+  <%= f.submit "Submit" %>
+  <%= link_to 'Phones', phones_path %> |
+  <%= link_to 'Brands', brands_path %>
+<% end %>
