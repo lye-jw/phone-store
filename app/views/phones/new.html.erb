@@ -7,13 +7,22 @@
 <%= form_for @phone do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
+  <br>
   <%= f.label :price %>
   <%= f.text_field :price %><br>
+  <br>
   <%= f.label :quantity %>
   <%= f.text_field :quantity %><br>
-  <%= f.label :brand %>
-  <%= f.select :brand_id, options_for_select(Brand.all.map{|s|[s.name, s.id]}) %><br>
-  <%= f.submit "Submit" %>
+  <br>
+  <fieldset class='fieldset-auto-width'>
+    <%= f.label :brand %>
+    <%= f.select :brand_id, options_for_select(Brand.all.map{|s|[s.name, s.id]}) %><br>
+    <br>
+    <%= link_to 'New Brand', new_brand_path %>
+  </fieldset>
+  <br><br>
+  <%= f.submit "Submit" %><br>
+  <br>
   <%= link_to 'Phones', phones_path %> |
   <%= link_to 'Brands', brands_path %>
 <% end %>

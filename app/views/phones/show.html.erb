@@ -1,13 +1,16 @@
 <p>Name: <%= @phone.name %></p>
 <p>Price: <%= @phone.price %></p>
 <p>Quantity: <%= @phone.quantity %></p>
-<p>Brand: <%= @phone.brand.name %></p>
+<p>Brand: <%= @phone.brand === nil ? 'Unknown' : @phone.brand.name %></p>
 
 <%= link_to 'Edit', edit_phone_path(@phone) %>
 <br>
 <br>
 
-<%= link_to 'Other Models of this Brand', brand_path(Brand.find(@phone.brand_id)) %>
-<br>
+<% if @phone.brand != nil %>
+    <%= link_to 'Other Models of this Brand', brand_path(Brand.find(@phone.brand_id)) %>
+    <br>
+<% end %>
+
 <%= link_to 'Phones', phones_path %> |
 <%= link_to 'Brands', brands_path %>
